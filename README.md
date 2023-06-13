@@ -1,21 +1,22 @@
-# Heading1
-#How to start?
+# How to Start?
 
 ./pure_vm_to_px.py
 
-usage: pure_vm_to_px.py [-h] 
-       --VMname VMNAME 
-       --Application APPLICATION
-       --Kubeconfig KUBECONFIG
+usage: pure_vm_to_px.py [-h]  
+       --VMname VMNAME   
+       --Application APPLICATION  
+       --Kubeconfig KUBECONFIG  
 
 
-Pre-requisites:
+## Pre-requisites:
 
-Edit vmware.json and fill Vcenter details of VM location
-Edit pure.json and fill FlashArray details 
+Edit vmware.json and fill Vcenter details of VM location  
+Edit pure.json and fill FlashArray details   
 
 
-What next?
 
-The data is copied to Portworx Persistent Volume. All you have to mount it in K8s with "mountPath: /data". 
-Application running in K8s can use Portworx Volume to serve the data.
+## What next?  
+
+1. Mount the PVC with mountPath: in your App.   
+2. Application Container should read and write the data.  
+
