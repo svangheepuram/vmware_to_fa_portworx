@@ -10,4 +10,5 @@ Edit pure.json and fill FlashArray details
 
 
 What next?
-Mount the Pure Storage FA Volume to Application from K8s and serve the data
+The data is copied to Portworx Persistent Volume. All you have to mount it in K8s with "mountPath: /data". 
+Application running in K8s can use Portworx Volume to serve the data.
