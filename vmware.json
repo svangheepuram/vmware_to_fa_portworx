@@ -1,0 +1,12 @@
+{
+	"vmware":
+	{
+	"vcenter":"",
+	"user":"",
+	"password":"",
+	"port":"",
+	"vvolds":"",
+	"dc":"",
+	"cluster":""
+	}
+}

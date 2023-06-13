@@ -1,0 +1,13 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name:
+  labels:
+    app:
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage:
+  storageClassName: sc-portworx-fa-direct-access
