@@ -3,10 +3,11 @@
 ./pure_vm_to_px.py
 
 usage: pure_vm_to_px.py [-h]  
-       --VMname VMNAME   
-       --Application APPLICATION  
-       --Kubeconfig KUBECONFIG  
+       --VMname <vmname>   
+       --Application <application name>   
+       --Kubeconfig  < path to kubeconfig file>   
 
+for ex: pure_vm_to_px.y --VMname Oracle_2.6 --Application Oracle --Kubeconfig /home/oracle/kubeconfig  
 
 ## Pre-requisites:
 
