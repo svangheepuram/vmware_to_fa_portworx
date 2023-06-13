@@ -1,11 +1,14 @@
 How to start?
 
 ./pure_vm_to_px.py
-usage: pure_vm_to_px.py [-h] --VMname VMNAME --Application APPLICATION
-                        --Kubeconfig KUBECONFIG
-pure_vm_to_px.py: error: the following arguments are required: --VMname, --Application, --Kubeconfig
 
-What is needed?
+usage: pure_vm_to_px.py [-h] 
+       --VMname VMNAME 
+       --Application APPLICATION
+       --Kubeconfig KUBECONFIG
+
+
+Pre-requisites:
 
 Edit vmware.json and fill Vcenter details of VM location
 Edit pure.json and fill FlashArray details 
