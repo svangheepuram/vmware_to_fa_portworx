@@ -19,5 +19,5 @@ Edit pure.json and fill FlashArray details
 ## What next?  
 
 1. Mount the PVC with mountPath: in your App.   
-2. Application Container should read and write the data.  
+2. The container should should be able to access the data, with read and write access.
 
