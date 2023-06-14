@@ -1,4 +1,5 @@
 import purestorage as ps
+import re
 from pure_read_json_contents import read_pure_json
 from kubernetes import client, config
 
@@ -10,11 +11,15 @@ def get_data_disks(vm):
 
     pure_info=read_pure_json()
     array = ps.FlashArray(pure_info['FlashArrays'][0]['MgmtEndPoint'], api_token=pure_info['FlashArrays'][0]['APIToken'])
+    pattern=re.compile("vvol-"+vm+'-[a-zA-Z0-9]{8}-vg')
+    vgroup_list=array.list_vgroups()
+    for each_vgroup in vgroup_list:
+        if pattern.match(each_vgroup['name']):
+           vgroup_name=each_vgroup['name']
     vol_list = array.list_volumes()
-    vvol_list = [ vvols for vvols in vol_list if vm in vvols['name']]
+    vvol_list = [ vvols for vvols in vol_list if vgroup_name in vvols['name']]
     data_disk_list = [ data_disks for data_disks in vvol_list if 'Data' in data_disks['name']]
-    sorted_list=sorted(data_disk_list,key=lambda d: d['created'])
-    return sorted_list[1:]
+    return data_disk_list[1:]
 
 def get_fcd_disks(size):
     pure_info=read_pure_json()
